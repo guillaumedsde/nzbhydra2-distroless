@@ -1,10 +1,7 @@
 #!/usr/bin/execlineb -P
 
 with-contenv
-multisubstitute
-{
-    importas PUID PUID
-    importas PGID PGID
-}
+importas PUID PUID
+importas PGID PGID
 s6-setuidgid ${PUID}:${PGID}
-./nzbhydra2 --datafolder /config
+./nzbhydra2 --datafolder /config --nobrowser

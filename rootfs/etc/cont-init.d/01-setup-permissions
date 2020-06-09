@@ -1,10 +1,8 @@
 #!/usr/bin/execlineb -P
 
 with-contenv
-multisubstitute
-{
-    importas PUID PUID
-    importas PGID PGID
-}
-fix-attrs /config true ${PUID}:${PGID} 0600 0700
-s6-ls -a /
+importas PUID PUID
+importas PGID PGID
+
+pipeline { s6-echo /config true ${PUID}:${PGID} 0600 0700 }
+fix-attrs 
