@@ -9,10 +9,10 @@ RUN wget $(wget -O - -o /dev/null https://api.github.com/repos/theotherp/nzbhydr
 # set the permissions
 # delete unused files
 # create fake readme.md so nzbhydra can start
-RUN mkdir -p /rootfs/etc/services.d/nzbhydra2 \
-    && tar xzf s6-overlay-amd64.tar.gz -C /rootfs \
-    && unzip nzbhydra2.zip -d /rootfs/etc/services.d/nzbhydra2 \
-    && cd /rootfs/etc/services.d/nzbhydra2 \
+RUN mkdir -p /rootfs/etc/services.d/nzbhydra2 
+RUN tar xzf s6-overlay-amd64.tar.gz -C /rootfs 
+RUN unzip nzbhydra2.zip -d /rootfs/etc/services.d/nzbhydra2 
+RUN cd /rootfs/etc/services.d/nzbhydra2 \
     && chmod 755 nzbhydra2 \
     && rm -r upstart sysv systemd rc.d *.py *.md \
     && touch readme.md 
