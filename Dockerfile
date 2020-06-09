@@ -22,6 +22,6 @@ COPY --from=build --chown=6666:6666 /nzbhydra2 /
 
 EXPOSE 5076
 
-VOLUME /data
-
 ENTRYPOINT ["/nzbhydra2"]
+
+CMD ["--datafolder", "/config", "--nobrowser"]
