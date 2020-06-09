@@ -1,0 +1,10 @@
+#!/usr/bin/execlineb -P
+
+with-contenv
+multisubstitute
+{
+    importas PUID PUID
+    importas PGID PGID
+}
+fix-attrs /config true ${PUID}:${PGID} 0600 0700
+s6-ls -a /
