@@ -21,7 +21,7 @@ FROM gcr.io/distroless/java:11
 
 COPY --from=build /rootfs /
 
-COPY /rootfs /
+COPY rootfs /
 
 EXPOSE 5076
 
