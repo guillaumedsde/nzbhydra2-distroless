@@ -1,7 +1,7 @@
 # [🐋 NZBHydra2-distroless](https://github.com/guillaumedsde/nzbhydra2-distroless)
 
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/guillaumedsde/nzbhydra2-distroless)](https://gitlab.com/guillaumedsde/nzbhydra2-distroless/-/pipelines)
-[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/guillaumedsde/nzbhydra2-distroless)](https://gitlab.com/guillaumedsde/nzbhydra2-distroless/-/pipelines)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless/builds)
+[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless/builds)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/guillaumedsde/nzbhydra2-distroless?label=version)](https://github.com/guillaumedsde/nzbhydra2-distroless/releases)
 [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless)
 [![Docker Pulls](https://img.shields.io/docker/pulls/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless)
