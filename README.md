@@ -1,6 +1,7 @@
 # [🐋 NZBHydra2-distroless](https://github.com/guillaumedsde/nzbhydra2-distroless)
 
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless/builds)
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/guillaumedsde/nzbhydra2-distroless?label=documentation)](https://guillaumedsde.gitlab.io/nzbhydra2-distroless/)
 [![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless/builds)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/guillaumedsde/nzbhydra2-distroless?label=version)](https://github.com/guillaumedsde/nzbhydra2-distroless/releases)
 [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless)
@@ -11,7 +12,7 @@
 [![GitHub](https://img.shields.io/github/license/guillaumedsde/nzbhydra2-distroless)](https://github.com/guillaumedsde/nzbhydra2-distroless/blob/master/LICENSE.md)
 
 This repository contains the code to build a small and secure **[distroless](https://github.com/GoogleContainerTools/distroless)** **docker** image for **[NZBHydra2](https://github.com/theotherp/nzbhydra2)** running as an unprivileged user.
-The final images are built and hosted on the [dockerhub](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless).
+The final images are built and hosted on the [dockerhub](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless) and the documentation is hosted on [gitlab pages](https://guillaumedsde.gitlab.io/nzbhydra2-distroless/)
 
 ## ✔️ Features summary
 
