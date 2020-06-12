@@ -1,3 +1,6 @@
+ARG BUILD_DATE
+ARG VCS_REF
+
 FROM alpine:latest as build
 
 ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-amd64.tar.gz s6-overlay-amd64.tar.gz
@@ -24,8 +27,8 @@ ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
-    org.label-schema.name="NZBHydra2-distroless" \
-    org.label-schema.description="  Distroless container for the NZBHydra2 program" \
+    org.label-schema.name="$DOCKER_REPO" \
+    org.label-schema.description="Distroless container for the NZBHydra2 program" \
     org.label-schema.url="https://guillaumedsde.gitlab.io/nzbhydra2-distroless/" \
     org.label-schema.vcs-ref=$VCS_REF \
     org.label-schema.vcs-url="https://github.com/guillaumedsde/nzbhydra2-distroless" \
