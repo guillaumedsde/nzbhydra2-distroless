@@ -27,7 +27,7 @@ ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
-    org.label-schema.name="$DOCKER_REPO" \
+    org.label-schema.name="nzbhydra2-distroless" \
     org.label-schema.description="Distroless container for the NZBHydra2 program" \
     org.label-schema.url="https://guillaumedsde.gitlab.io/nzbhydra2-distroless/" \
     org.label-schema.vcs-ref=$VCS_REF \
