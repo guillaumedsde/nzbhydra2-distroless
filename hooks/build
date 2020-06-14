@@ -2,8 +2,13 @@
 
 # $IMAGE_NAME var is injected into the build so the tag is correct.
 
+VERSION=$(curl --silent "https://api.github.com/repos/theotherp/nzbhydra2/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
+
 echo "Build hook running"
-docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-             --build-arg VCS_REF="$SOURCE_COMMIT" \
-             -f "$DOCKERFILE_PATH" \
-             -t "$IMAGE_NAME" .
+docker build --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+    --build-arg VCS_REF="$SOURCE_COMMIT" \
+    --build-arg NZBHYDRA2_VERSION="$VERSION" \
+    -f "$DOCKERFILE_PATH" \
+    -t "$IMAGE_NAME" \
+    -t "$DOCKER_REPO:$VERSION" \
+    .
