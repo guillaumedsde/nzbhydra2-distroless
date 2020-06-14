@@ -4,7 +4,6 @@
 [![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/guillaumedsde/nzbhydra2-distroless?label=documentation)](https://guillaumedsde.gitlab.io/nzbhydra2-distroless/)
 [![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless/builds)
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless/tags)
-
 [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless)
 [![Docker Pulls](https://img.shields.io/docker/pulls/guillaumedsde/nzbhydra2-distroless)](https://hub.docker.com/r/guillaumedsde/nzbhydra2-distroless)
 [![GitHub stars](https://img.shields.io/github/stars/guillaumedsde/nzbhydra2-distroless?label=Github%20stars)](https://github.com/guillaumedsde/nzbhydra2-distroless)
@@ -64,6 +63,7 @@ I am waiting to see if Google implement their distroless Java images for other p
 
 A couple of projects really helped me out while developing this container:
 
+- 💽 [NZBHydra2](https://github.com/theotherp/nzbhydra2) _the_ awesome software
 - 🏁 [s6-overlay](https://github.com/just-containers/s6-overlay) A simple, relatively small yet powerful set of init script for managing processes (especially in docker containers)
 - 🥑 [Google's distroless](https://github.com/GoogleContainerTools/distroless) base docker images
 - 🐋 The [Docker](https://github.com/docker) project (of course)
