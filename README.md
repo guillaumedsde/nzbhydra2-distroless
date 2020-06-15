@@ -35,6 +35,24 @@ $ docker run  -v /your/config/path/:/config \
               guillaumedsde/nzbhydra2-distroless:latest
 ```
 
+#### 🧊 Read-only `docker run`
+
+If you want your container to be _even_ more secure, you can run it with a read-only filesystem:
+
+```bash
+$ docker run  -v /your/config/path/:/config \
+              -v /your/torrent/blackhole/path/:/blackhole \
+              -v /etc/localtime:/etc/localtime:ro \
+              -e PUID=1000 \
+              -e PGID=1000 \
+              -e S6_READ_ONLY_ROOT=1 \
+              -p 5076:5076 \
+              --read-only \
+              --tmpfs /var:rw,exec \
+              --tmpfs /tmp \
+              guillaumedsde/nzbhydra2-distroless:latest
+```
+
 ### `docker-compose.yml`
 
 ```yaml
@@ -50,6 +68,29 @@ services:
       - PGID=1000
     ports:
       - "5076:5076"
+    image: "guillaumedsde/nzbhydra2-distroless:latest"
+```
+
+#### 🧊 Read-only `docker-compose.yml`
+
+```yaml
+version: "3.3"
+services:
+  jackett-distroless:
+    volumes:
+      - "/your/config/path/:/config"
+      - "/your/torrent/blackhole/path/:/blackhole"
+      - "/etc/localtime:/etc/localtime:ro"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - S6_READ_ONLY_ROOT=1
+    ports:
+      - "5076:5076"
+    tmpfs:
+      - "/var:rw,exec"
+      - "/tmp:rw,exec"
+    read_only: true
     image: "guillaumedsde/nzbhydra2-distroless:latest"
 ```
 
