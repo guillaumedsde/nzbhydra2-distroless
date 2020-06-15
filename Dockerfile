@@ -52,4 +52,6 @@ ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
     PUID=1000 \
     PGID=1000
 
+VOLUME /blackhole
+
 ENTRYPOINT ["/init"]
