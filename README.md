@@ -73,6 +73,8 @@ services:
 
 #### 🧊 Read-only `docker-compose.yml`
 
+If you want your container to be _even_ more secure, you can run it with a read-only filesystem:
+
 ```yaml
 version: "3.3"
 services:
