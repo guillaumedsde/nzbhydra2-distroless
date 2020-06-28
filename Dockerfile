@@ -25,6 +25,10 @@ RUN cd /rootfs/etc/services.d/nzbhydra2 \
     && rm -r upstart sysv systemd rc.d *.py *.md \
     && touch readme.md 
 
+ARG BUSYBOX_VERSION=1.31.0-i686-uclibc
+ADD https://busybox.net/downloads/binaries/$BUSYBOX_VERSION/busybox_WGET /rootfs/wget
+RUN chmod a+x /rootfs/wget
+
 FROM gcr.io/distroless/java:11
 
 # Build-time metadata as defined at http://label-schema.org
@@ -53,5 +57,8 @@ ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
     PGID=1000
 
 VOLUME /blackhole
+
+HEALTHCHECK  --start-period=15s --interval=1m --timeout=3s \
+    CMD [ "/wget", "--quiet", "--tries=1", "--spider", "http://localhost:5076/"]
 
 ENTRYPOINT ["/init"]
