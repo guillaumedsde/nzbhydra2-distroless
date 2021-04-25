@@ -1,6 +1,6 @@
 ARG BUILD_DATE
 ARG VCS_REF
-ARG NZBHYDRA2_VERSION=3.8.0
+ARG NZBHYDRA2_VERSION=v3.8.0
 
 FROM alpine:3.13 as build
 
@@ -11,7 +11,7 @@ ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-ov
 # download the latest release
 RUN if [ "${NZBHYDRA2_VERSION}" -eq "latest" ]; \
     then wget "$(wget -O - -o /dev/null https://api.github.com/repos/theotherp/nzbhydra2/releases/latest | grep browser_download_url | grep linux.zip | head -n 1 | cut -d \" -f 4)" -O nzbhydra2.zip ; \
-    else wget "https://github.com/theotherp/nzbhydra2/releases/download/v${NZBHYDRA2_VERSION}/nzbhydra2-${NZBHYDRA2_VERSION//v}-linux.zip" -O nzbhydra2.zip; fi
+    else wget "https://github.com/theotherp/nzbhydra2/releases/download/${NZBHYDRA2_VERSION}/nzbhydra2-${NZBHYDRA2_VERSION//v}-linux.zip" -O nzbhydra2.zip; fi
 
 
 # extract the release
