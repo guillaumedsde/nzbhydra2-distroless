@@ -3,4 +3,6 @@
 VERSION=$(curl --silent "https://api.github.com/repos/theotherp/nzbhydra2/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
 
 docker push "$IMAGE_NAME"
-docker push "$DOCKER_REPO:$VERSION"
+docker push "$DOCKER_REPO:$VERSION-s6-overlay"
+docker push "$IMAGE_NAME-distroless"
+docker push "$DOCKER_REPO:$VERSION-distroless"

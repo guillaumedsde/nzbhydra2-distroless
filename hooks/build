@@ -5,10 +5,20 @@
 VERSION=$(curl --silent "https://api.github.com/repos/theotherp/nzbhydra2/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
 
 echo "Build hook running"
-docker build --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+docker build --build-arg BUILD_DATE="$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
     --build-arg VCS_REF="$SOURCE_COMMIT" \
     --build-arg NZBHYDRA2_VERSION="$VERSION" \
+    --target s6 \
     -f "$DOCKERFILE_PATH" \
     -t "$IMAGE_NAME" \
-    -t "$DOCKER_REPO:$VERSION" \
+    -t "$DOCKER_REPO:$VERSION-s6-overlay" \
+    .
+
+docker build --build-arg BUILD_DATE="$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
+    --build-arg VCS_REF="$SOURCE_COMMIT" \
+    --build-arg NZBHYDRA2_VERSION="$VERSION" \
+    --target distroless \
+    -f "$DOCKERFILE_PATH" \
+    -t "$IMAGE_NAME" \
+    -t "$DOCKER_REPO:$VERSION-distroless" \
     .
