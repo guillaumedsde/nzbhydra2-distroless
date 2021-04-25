@@ -19,6 +19,6 @@ docker build --build-arg BUILD_DATE="$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
     --build-arg NZBHYDRA2_VERSION="$VERSION" \
     --target distroless \
     -f "$DOCKERFILE_PATH" \
-    -t "$IMAGE_NAME" \
+    -t "$IMAGE_NAME-distroless" \
     -t "$DOCKER_REPO:$VERSION-distroless" \
     .
