@@ -1,8 +1,8 @@
 ARG BUILD_DATE
 ARG VCS_REF
-ARG NZBHYDRA2_VERSION=v3.8.0
+ARG NZBHYDRA2_VERSION=v3.15.2
 
-FROM alpine:3.13 as build
+FROM alpine:3.14 as build
 
 ARG NZBHYDRA2_VERSION
 
@@ -48,15 +48,14 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.schema-version="1.0"
 
 COPY --from=build /rootfs/wget /rootfs/etc/services.d/nzbhydra2 /
-
-COPY rootfs /
-
 EXPOSE 5076
 
 VOLUME /blackhole
 
 HEALTHCHECK  --start-period=15s --interval=1m --timeout=3s \
     CMD [ "/wget", "--quiet", "--tries=1", "--spider", "http://localhost:5076/"]
+
+ENV HOME=/config
 
 ENTRYPOINT ["/nzbhydra2"]
 CMD ["--datafolder", "/config", "--nobrowser"]
